@@ -7,7 +7,7 @@ scikit-learn
 tensorboard
 PuLP>=3.3.2,<4; python_version < "3.12"
 PuLP[cbc]>=4; python_version >= "3.12"
-matplotlib<3.10.0
+matplotlib<3.11.0
 scipy
 protobuf
 mct-quantizers~=1.7.0
