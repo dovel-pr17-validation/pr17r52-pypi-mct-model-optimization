@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>QuantizationErrorMethod &#8212; MCT Documentation: ver 2.6.0</title>
+    <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../static/bizstyle.css?v=5283bb3d" />
+    <link rel="stylesheet" type="text/css" href="../../../static/css/custom.css?v=01243f34" />
+    
+    <script src="../../../static/documentation_options.js?v=ae39cb24"></script>
+    <script src="../../../static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">MCT Documentation: ver 2.6.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">QuantizationErrorMethod</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="quantizationerrormethod">
+<span id="ug-quantizationerrormethod"></span><h1>QuantizationErrorMethod<a class="headerlink" href="#quantizationerrormethod" title="Link to this heading">¶</a></h1>
+<p><strong>Enum to select a method for quantization parameters’ selection:</strong></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="model_compression_toolkit.core.QuantizationErrorMethod">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">model_compression_toolkit.core.</span></span><span class="sig-name descname"><span class="pre">QuantizationErrorMethod</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_compression_toolkit.core.QuantizationErrorMethod" title="Link to this definition">¶</a></dt>
+<dd><p>Method for quantization threshold selection:</p>
+<p>NOCLIPPING - Use min/max values as thresholds. This avoids clipping bias but reduces quantization resolution.</p>
+<p>MSE - <strong>(default)</strong> Use mean square error for minimizing quantization noise.</p>
+<p>MAE - Use mean absolute error for minimizing quantization noise.</p>
+<p>KL - Use KL-divergence to make signals distributions to be similar as possible.</p>
+<p>Lp - Use Lp-norm to minimizing quantization noise. The parameter p is specified by QuantizationConfig.l_p_value (default: 2; integer only). It equals MAE when p = 1 and MSE when p = 2. If you want to use p≧3, please use this method.</p>
+<p>HMSE - Use Hessian-based mean squared error for minimizing quantization noise. This method is using Hessian scores to factorize more valuable parameters when computing the error induced by quantization.</p>
+<p><strong>How to select QuantizationErrorMethod</strong></p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 80.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Method</p></th>
+<th class="head"><p>Recommended Situations</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NOCLIPPING</p></td>
+<td><p>Research and debugging phases where you want to observe behavior across the entire range. This is effective when you want to maintain the entire range, especially when the data is biased (for example, when there is an extremely small amount of data on the minimum side).</p></td>
+</tr>
+<tr class="row-odd"><td><p>MSE</p></td>
+<td><p><strong>Basically, you should use this method.</strong> This method is effective when the data distribution is close to normal and there are few outliers. Effective when you want stable results, such as in regression tasks.</p></td>
+</tr>
+<tr class="row-even"><td><p>MAE</p></td>
+<td><p>Effective for data with a lot of noise and outliers.</p></td>
+</tr>
+<tr class="row-odd"><td><p>KL</p></td>
+<td><p>Useful for tasks where output distribution is important (such as Anomaly Detection).</p></td>
+</tr>
+<tr class="row-even"><td><p>LP</p></td>
+<td><p>p≧3 is effective when you want to be more sensitive to outliers than MSE. (such as Sparse Data).</p></td>
+</tr>
+<tr class="row-odd"><td><p>HMSE</p></td>
+<td><p>Recommended when using GPTQ. This is effective for models where specific layers strongly influence the overall accuracy. (such as Transformers).</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">QuantizationErrorMethod</a><ul>
+<li><a class="reference internal" href="#model_compression_toolkit.core.QuantizationErrorMethod"><code class="docutils literal notranslate"><span class="pre">QuantizationErrorMethod</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">MCT Documentation: ver 2.6.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">QuantizationErrorMethod</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Sony Semiconductor Solutions.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

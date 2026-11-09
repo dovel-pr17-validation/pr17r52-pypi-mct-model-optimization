@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Get DataGenerationConfig for Keras Models &#8212; MCT Documentation: ver 2.6.0</title>
+    <link rel="stylesheet" type="text/css" href="../../../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../../static/bizstyle.css?v=5283bb3d" />
+    <link rel="stylesheet" type="text/css" href="../../../static/css/custom.css?v=01243f34" />
+    
+    <script src="../../../static/documentation_options.js?v=ae39cb24"></script>
+    <script src="../../../static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">MCT Documentation: ver 2.6.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Get DataGenerationConfig for Keras Models</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="get-datagenerationconfig-for-keras-models">
+<span id="ug-get-keras-data-generation-config"></span><h1>Get DataGenerationConfig for Keras Models<a class="headerlink" href="#get-datagenerationconfig-for-keras-models" title="Link to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="model_compression_toolkit.data_generation.get_keras_data_generation_config">
+<span class="sig-prename descclassname"><span class="pre">model_compression_toolkit.data_generation.</span></span><span class="sig-name descname"><span class="pre">get_keras_data_generation_config</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n_iter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_N_ITER</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">optimizer</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Adam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_gen_batch_size</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_DATA_GEN_BS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_lr</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_KERAS_INITIAL_LR</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_loss_multiplier</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_KERAS_OUTPUT_LOSS_MULTIPLIER</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scheduler_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SchedulerType.REDUCE_ON_PLATEAU</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_alignment_loss_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">BatchNormAlignemntLossType.L2_SQUARE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_loss_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">OutputLossType.REGULARIZED_MIN_MAX_DIFF</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_init_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DataInitType.Gaussian</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">layer_weighting_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">BNLayerWeightingType.AVERAGE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_granularity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ImageGranularity.BatchWise</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_pipeline_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ImagePipelineType.SMOOTHING_AND_AUGMENTATION</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_normalization_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">ImageNormalizationType.KERAS_APPLICATIONS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">extra_pixels</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">DEFAULT_KERAS_EXTRA_PIXELS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bn_layer_types</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[BatchNormalization]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_clipping</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#model_compression_toolkit.data_generation.get_keras_data_generation_config" title="Link to this definition">¶</a></dt>
+<dd><p>Function to create a DataGenerationConfig object with the specified configuration parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><span class="sphinx_autodoc_typehints-type"><a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.DataGenerationConfig" title="model_compression_toolkit.data_generation.common.data_generation_config.DataGenerationConfig"><code class="xref py py-class docutils literal notranslate"><span class="pre">DataGenerationConfig</span></code></a></span></p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>n_iter</strong> (<em>int</em>) – Number of iterations for the data generation process.</p></li>
+<li><p><strong>optimizer</strong> (<em>Optimizer</em>) – The optimizer to use for the data generation process.</p></li>
+<li><p><strong>data_gen_batch_size</strong> (<em>int</em>) – Batch size for data generation.</p></li>
+<li><p><strong>initial_lr</strong> (<em>float</em>) – Initial learning rate for the optimizer.</p></li>
+<li><p><strong>output_loss_multiplier</strong> (<em>float</em>) – Multiplier for the output loss during optimization.</p></li>
+<li><p><strong>scheduler_type</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.SchedulerType" title="model_compression_toolkit.data_generation.SchedulerType"><em>SchedulerType</em></a>) – The type of scheduler to use.</p></li>
+<li><p><strong>bn_alignment_loss_type</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.BatchNormAlignemntLossType" title="model_compression_toolkit.data_generation.BatchNormAlignemntLossType"><em>BatchNormAlignemntLossType</em></a>) – The type of BatchNorm alignment loss to use.</p></li>
+<li><p><strong>output_loss_type</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.OutputLossType" title="model_compression_toolkit.data_generation.OutputLossType"><em>OutputLossType</em></a>) – The type of output loss to use.</p></li>
+<li><p><strong>data_init_type</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.DataInitType" title="model_compression_toolkit.data_generation.DataInitType"><em>DataInitType</em></a>) – The type of data initialization to use.</p></li>
+<li><p><strong>layer_weighting_type</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.BNLayerWeightingType" title="model_compression_toolkit.data_generation.BNLayerWeightingType"><em>BNLayerWeightingType</em></a>) – The type of layer weighting to use.</p></li>
+<li><p><strong>image_granularity</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.ImageGranularity" title="model_compression_toolkit.data_generation.ImageGranularity"><em>ImageGranularity</em></a>) – The granularity of the images for optimization.</p></li>
+<li><p><strong>image_pipeline_type</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.ImagePipelineType" title="model_compression_toolkit.data_generation.ImagePipelineType"><em>ImagePipelineType</em></a>) – The type of image pipeline to use.</p></li>
+<li><p><strong>image_normalization_type</strong> (<a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.ImageNormalizationType" title="model_compression_toolkit.data_generation.ImageNormalizationType"><em>ImageNormalizationType</em></a>) – The type of image normalization to use.</p></li>
+<li><p><strong>extra_pixels</strong> (<em>Union</em><em>[</em><em>int</em><em>, </em><em>Tuple</em><em>[</em><em>int</em><em>, </em><em>int</em><em>]</em><em>]</em>) – Extra pixels to add to the input image size. Defaults to 0.</p></li>
+<li><p><strong>bn_layer_types</strong> (<em>List</em>) – List of BatchNorm layer types to be considered for data generation.</p></li>
+<li><p><strong>image_clipping</strong> (<em>bool</em>) – Whether to clip images during optimization.</p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Data generation configuration object.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="../classes/DataGenerationConfig.html#model_compression_toolkit.data_generation.DataGenerationConfig" title="model_compression_toolkit.data_generation.DataGenerationConfig">DataGenerationConfig</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Get DataGenerationConfig for Keras Models</a><ul>
+<li><a class="reference internal" href="#model_compression_toolkit.data_generation.get_keras_data_generation_config"><code class="docutils literal notranslate"><span class="pre">get_keras_data_generation_config()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="../../../index.html">MCT Documentation: ver 2.6.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Get DataGenerationConfig for Keras Models</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Sony Semiconductor Solutions.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

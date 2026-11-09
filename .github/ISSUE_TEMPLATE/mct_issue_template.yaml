@@ -1,0 +1,90 @@
+name: MCT Issue Template
+description: Please report your issue using this template
+body:
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What type of issue would you like to report?
+      multiple: false
+      options:
+        - Bug
+        - Performance
+        - Feature Request
+        - Documentation
+        - Others
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: | 
+        You can obtain the MCT version with: <br> `python -c "import  model_compression_toolkit as mct; print(mct.__version__)"`
+
+  - type: dropdown
+    id: source
+    attributes:
+      label: Source
+      description: MCT installed from
+      options:
+        - source
+        - pip (model-compression-toolkit)
+    validations:
+      required: true
+  - type: input
+    id: mctversion
+    attributes:
+      label: MCT Version
+      description: Version of MCT you're using
+      placeholder: e.g., 1.7.0
+    validations:
+      required: true
+  - type: input
+    id: OS
+    attributes:
+      label: OS Platform and Distribution
+      description:
+      placeholder: e.g., Linux Ubuntu 20.04
+    validations:
+      required: false
+  - type: input
+    id: Python
+    attributes:
+      label: Python version
+      description:
+      placeholder: e.g., 3.11
+    validations:
+      required: false
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Describe the issue
+      description:
+      placeholder:
+      value:
+    validations:
+      required: true
+  - type: textarea
+    id: expected-behaviour
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen?
+      placeholder:
+      value:
+    validations:
+      required: false
+  - type: textarea
+    id: reproducable-code
+    attributes:
+      label: Code to reproduce the issue
+      description: Provide a code to generate the problem. Please provide a minimal snippet as possible to help us solve it efficiently. If possible, please share a link to Colab/Jupyter/any notebook.
+      placeholder:
+      value:
+      render: python
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Log output
+      description: Please add any relevant log output.

@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API Docs &#8212; MCT Documentation: ver 2.6.0</title>
+    <link rel="stylesheet" type="text/css" href="../../static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../static/bizstyle.css?v=5283bb3d" />
+    <link rel="stylesheet" type="text/css" href="../../static/css/custom.css?v=01243f34" />
+    
+    <script src="../../static/documentation_options.js?v=ae39cb24"></script>
+    <script src="../../static/doctools.js?v=9bcbadda"></script>
+    <script src="../../static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="XQuant Extension Tool" href="../../guidelines/XQuant_Extension_Tool.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <!--[if lt IE 9]>
+    <script src="static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../../guidelines/XQuant_Extension_Tool.html" title="XQuant Extension Tool"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">MCT Documentation: ver 2.6.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API Docs</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="api-docs">
+<span id="ug-api-docs"></span><h1>API Docs<a class="headerlink" href="#api-docs" title="Link to this heading">¶</a></h1>
+<p><strong>Init module for MCT API.</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">model_compression_toolkit</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">mct</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<section id="ptq">
+<h2>ptq<a class="headerlink" href="#ptq" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/pytorch_post_training_quantization.html#ug-pytorch-post-training-quantization"><span class="std std-ref">pytorch_post_training_quantization</span></a>: A function to use for post training quantization of PyTorch models.</p></li>
+<li><p><a class="reference internal" href="methods/keras_post_training_quantization.html#ug-keras-post-training-quantization"><span class="std std-ref">keras_post_training_quantization</span></a>: A function to use for post training quantization of Keras models.</p></li>
+</ul>
+</section>
+<section id="gptq">
+<h2>gptq<a class="headerlink" href="#gptq" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/pytorch_gradient_post_training_quantization.html#ug-pytorch-gradient-post-training-quantization"><span class="std std-ref">pytorch_gradient_post_training_quantization</span></a>: A function to use for gradient-based post training quantization of Pytorch models.</p></li>
+<li><p><a class="reference internal" href="methods/get_pytroch_gptq_config.html#ug-get-pytorch-gptq-config"><span class="std std-ref">get_pytorch_gptq_config</span></a>: A function to create a GradientPTQConfig instance to use for Pytorch models when using GPTQ.</p></li>
+<li><p><a class="reference internal" href="methods/keras_gradient_post_training_quantization.html#ug-keras-gradient-post-training-quantization"><span class="std std-ref">keras_gradient_post_training_quantization</span></a>: A function to use for gradient-based post training quantization of Keras models.</p></li>
+<li><p><a class="reference internal" href="methods/get_keras_gptq_config.html#ug-get-keras-gptq-config"><span class="std std-ref">get_keras_gptq_config</span></a>: A function to create a GradientPTQConfig instance to use for Keras models when using GPTQ.</p></li>
+<li><p><a class="reference internal" href="classes/GradientPTQConfig.html#ug-gradientptqconfig"><span class="std std-ref">GradientPTQConfig</span></a>: Class to configure GradientPTQ options for gradient based post training quantization.</p></li>
+</ul>
+</section>
+<section id="qat">
+<h2>qat<a class="headerlink" href="#qat" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/pytorch_quantization_aware_training_init_experimental.html#ug-pytorch-quantization-aware-training-init-experimental"><span class="std std-ref">pytorch_quantization_aware_training_init_experimental</span></a>: A function to use for preparing a Pytorch model for Quantization Aware Training (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/pytorch_quantization_aware_training_finalize_experimental.html#ug-pytorch-quantization-aware-training-finalize-experimental"><span class="std std-ref">pytorch_quantization_aware_training_finalize_experimental</span></a>: A function to finalize a Pytorch model after Quantization Aware Training to a model without QuantizeWrappers (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/keras_quantization_aware_training_init_experimental.html#ug-keras-quantization-aware-training-init-experimental"><span class="std std-ref">keras_quantization_aware_training_init_experimental</span></a>: A function to use for preparing a Keras model for Quantization Aware Training (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/keras_quantization_aware_training_finalize_experimental.html#ug-keras-quantization-aware-training-finalize-experimental"><span class="std std-ref">keras_quantization_aware_training_finalize_experimental</span></a>: A function to finalize a Keras model after Quantization Aware Training to a model without QuantizeWrappers (experimental).</p></li>
+<li><p><a class="reference internal" href="modules/qat_config.html#ug-qat-config"><span class="std std-ref">qat_config</span></a>: Module to create quantization configuration for Quantization-aware Training (experimental).</p></li>
+</ul>
+</section>
+<section id="core">
+<h2>core<a class="headerlink" href="#core" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/core_config.html#ug-coreconfig"><span class="std std-ref">CoreConfig</span></a>: Module to contain configurations of the entire optimization process.</p></li>
+<li><p><a class="reference internal" href="classes/QuantizationConfig.html#ug-quantizationconfig"><span class="std std-ref">QuantizationConfig</span></a>: Module to configure the quantization process.</p></li>
+<li><p><a class="reference internal" href="classes/QuantizationErrorMethod.html#ug-quantizationerrormethod"><span class="std std-ref">QuantizationErrorMethod</span></a>: Select a method for quantization parameters’ selection.</p></li>
+<li><p><a class="reference internal" href="classes/MixedPrecisionQuantizationConfig.html#ug-mixedprecisionquantizationconfig"><span class="std std-ref">MixedPrecisionQuantizationConfig</span></a>: Module to configure the quantization process when using mixed-precision PTQ.</p></li>
+<li><p><a class="reference internal" href="classes/BitWidthConfig.html#ug-bitwidthconfig"><span class="std std-ref">BitWidthConfig</span></a>: Module to configure the bit-width manually.</p></li>
+<li><p><a class="reference internal" href="classes/ResourceUtilization.html#ug-resourceutilization"><span class="std std-ref">ResourceUtilization</span></a>: Module to configure resources to use when searching for a configuration for the optimized model.</p></li>
+<li><p><a class="reference internal" href="modules/network_editor.html#ug-network-editor"><span class="std std-ref">network_editor</span></a>: Module to modify the optimization process for troubleshooting.</p></li>
+<li><p><a class="reference internal" href="methods/pytorch_kpi_data.html#ug-pytorch-resource-utilization-data"><span class="std std-ref">pytorch_resource_utilization_data</span></a>: A function to compute Resource Utilization data that can be used to calculate the desired target resource utilization for PyTorch models.</p></li>
+<li><p><a class="reference internal" href="methods/keras_kpi_data.html#ug-keras-resource-utilization-data"><span class="std std-ref">keras_resource_utilization_data</span></a>: A function to compute Resource Utilization data that can be used to calculate the desired target resource utilization for Keras models.</p></li>
+</ul>
+</section>
+<section id="data-generation">
+<h2>data_generation<a class="headerlink" href="#data-generation" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/pytorch_data_generation_experimental.html#ug-pytorch-data-generation-experimental"><span class="std std-ref">pytorch_data_generation_experimental</span></a>: A function to generate data for a Pytorch model (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/get_pytorch_data_generation_config.html#ug-get-pytorch-data-generation-config"><span class="std std-ref">get_pytorch_data_generation_config</span></a>: A function to load a DataGenerationConfig for Pytorch data generation (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/keras_data_generation_experimental.html#ug-keras-data-generation-experimental"><span class="std std-ref">keras_data_generation_experimental</span></a>: A function to generate data for a Keras model (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/get_keras_data_generation_config.html#ug-get-keras-data-generation-config"><span class="std std-ref">get_keras_data_generation_config</span></a>: A function to generate a DataGenerationConfig for Tensorflow data generation (experimental).</p></li>
+<li><p><a class="reference internal" href="classes/DataGenerationConfig.html#ug-datagenerationconfig"><span class="std std-ref">DataGenerationConfig</span></a>: A configuration class for the data generation process (experimental).</p></li>
+</ul>
+</section>
+<section id="pruning">
+<h2>pruning<a class="headerlink" href="#pruning" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/pytorch_pruning_experimental.html#ug-pytorch-pruning-experimental"><span class="std std-ref">pytorch_pruning_experimental</span></a>: A function to apply structured pruning for Pytorch models (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/keras_pruning_experimental.html#ug-keras-pruning-experimental"><span class="std std-ref">keras_pruning_experimental</span></a>: A function to apply structured pruning for Keras models (experimental).</p></li>
+<li><p><a class="reference internal" href="classes/PruningConfig.html#ug-pruningconfig"><span class="std std-ref">PruningConfig</span></a>: Configuration for the pruning process (experimental).</p></li>
+<li><p><a class="reference internal" href="classes/PruningInfo.html#ug-pruninginfo"><span class="std std-ref">PruningInfo</span></a>: Information about the pruned model such as pruned channel indices, etc. (experimental).</p></li>
+</ul>
+</section>
+<section id="xquant">
+<h2>xquant<a class="headerlink" href="#xquant" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/xquant_report_pytorch_experimental.html#ug-xquant-report-pytorch-experimental"><span class="std std-ref">xquant_report_pytorch_experimental</span></a>: A function to generate an explainable quantization report for a quantized Pytorch model (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/xquant_report_troubleshoot_pytorch_experimental.html#ug-xquant-report-troubleshoot-pytorch-experimental"><span class="std std-ref">xquant_report_troubleshoot_pytorch_experimental</span></a>: A function to generate an explainable quantization report, detect degraded layaers and judge degrade causes for a quantized Pytorch model. (experimental).</p></li>
+<li><p><a class="reference internal" href="methods/xquant_report_keras_experimental.html#ug-xquant-report-keras-experimental"><span class="std std-ref">xquant_report_keras_experimental</span></a>: A function to generate an explainable quantization report for a quantized Keras model (experimental).</p></li>
+<li><p><a class="reference internal" href="classes/XQuantConfig.html#ug-xquantconfig"><span class="std std-ref">XQuantConfig</span></a>: Configuration for the XQuant report (experimental).</p></li>
+</ul>
+</section>
+<section id="exporter">
+<h2>exporter<a class="headerlink" href="#exporter" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/exporter.html#ug-exporter"><span class="std std-ref">exporter</span></a>: Module that enables to export a quantized model in different serialization formats.</p></li>
+</ul>
+</section>
+<section id="trainable-infrastructure">
+<h2>trainable_infrastructure<a class="headerlink" href="#trainable-infrastructure" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/trainable_infrastructure.html#ug-trainable-infrastructure"><span class="std std-ref">trainable_infrastructure</span></a>: Module that contains quantization abstraction and quantizers for hardware-oriented model optimization tools.</p></li>
+</ul>
+</section>
+<section id="set-log-folder">
+<h2>set_log_folder<a class="headerlink" href="#set-log-folder" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/set_logger_path.html#ug-set-log-folder"><span class="std std-ref">set_log_folder</span></a>: Function to set the logger path directory and to enable logging.</p></li>
+</ul>
+</section>
+<section id="keras-load-quantized-model">
+<h2>keras_load_quantized_model<a class="headerlink" href="#keras-load-quantized-model" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="methods/keras_load_quantizad_model.html#ug-keras-load-quantized-model"><span class="std std-ref">keras_load_quantized_model</span></a>: A function to load a quantized keras model.</p></li>
+</ul>
+</section>
+<section id="target-platform-capabilities">
+<h2>target_platform_capabilities<a class="headerlink" href="#target-platform-capabilities" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="modules/target_platform_capabilities.html#ug-target-platform-capabilities"><span class="std std-ref">target_platform_capabilities</span></a>: Module to create and model hardware-related settings to optimize the model according to, by the hardware the optimized model will use during inference.</p></li>
+<li><p><a class="reference internal" href="methods/get_target_platform_capabilities.html#ug-get-target-platform-capabilities"><span class="std std-ref">get_target_platform_capabilities</span></a>: A function to get a TargetPlatformCapabilities for tpc version and device type.</p></li>
+<li><p><a class="reference internal" href="methods/get_target_platform_capabilities_sdsp.html#ug-get-target-platform-capabilities-sdsp"><span class="std std-ref">get_target_platform_capabilities_sdsp</span></a>: A function to get a TargetPlatformCapabilities for sdsp converter version.</p></li>
+<li><p><a class="reference internal" href="classes/DefaultDict.html#ug-defaultdict"><span class="std std-ref">DefaultDict</span></a>: Util class for creating a TargetPlatformCapabilities.</p></li>
+</ul>
+</section>
+<section id="wrapper">
+<h2>wrapper<a class="headerlink" href="#wrapper" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="classes/Wrapper.html#ug-wrapper"><span class="std std-ref">wrapper</span></a>: Util class for the Model Compression Toolkit (MCT) wrapper API. This class enables users to use MCT easily, without the need to know its specifications.</p></li>
+</ul>
+</section>
+<section id="indices-and-tables">
+<h2>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Link to this heading">¶</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="../../genindex.html"><span class="std std-ref">Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
+<li><p><a class="reference internal" href="../../search.html"><span class="std std-ref">Search Page</span></a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This documentation is auto-generated using Sphinx</p>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="../../index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">API Docs</a><ul>
+<li><a class="reference internal" href="#ptq">ptq</a></li>
+<li><a class="reference internal" href="#gptq">gptq</a></li>
+<li><a class="reference internal" href="#qat">qat</a></li>
+<li><a class="reference internal" href="#core">core</a></li>
+<li><a class="reference internal" href="#data-generation">data_generation</a></li>
+<li><a class="reference internal" href="#pruning">pruning</a></li>
+<li><a class="reference internal" href="#xquant">xquant</a></li>
+<li><a class="reference internal" href="#exporter">exporter</a></li>
+<li><a class="reference internal" href="#trainable-infrastructure">trainable_infrastructure</a></li>
+<li><a class="reference internal" href="#set-log-folder">set_log_folder</a></li>
+<li><a class="reference internal" href="#keras-load-quantized-model">keras_load_quantized_model</a></li>
+<li><a class="reference internal" href="#target-platform-capabilities">target_platform_capabilities</a></li>
+<li><a class="reference internal" href="#wrapper">wrapper</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="../../guidelines/XQuant_Extension_Tool.html"
+                          title="previous chapter">XQuant Extension Tool</a></p>
+  </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../../guidelines/XQuant_Extension_Tool.html" title="XQuant Extension Tool"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../../index.html">MCT Documentation: ver 2.6.0</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">API Docs</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2022, Sony Semiconductor Solutions.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.1.3.
+    </div>
+  </body>
+</html>

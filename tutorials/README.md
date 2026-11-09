@@ -1,0 +1,33 @@
+# MCT Tutorials
+Explore the Model Compression Toolkit (MCT) through our tutorials, 
+covering compression techniques for Keras and PyTorch models. 
+Access interactive Jupyter notebooks for hands-on learning.
+
+
+## Getting started
+Learn how to quickly quantize pre-trained models using MCT's post-training quantization technique for both Keras and PyTorch models.
+- [Post training quantization with Keras](notebooks/imx500_notebooks/keras/example_keras_mobilenetv2_for_imx500.ipynb)
+- [Post training quantization with PyTorch](notebooks/mct_features_notebooks/pytorch/example_pytorch_post_training_quantization.ipynb)
+
+## MCT Features
+This set of tutorials covers all the quantization tools provided by MCT. 
+The notebooks in this section demonstrate how to configure and run simple and advanced post-training quantization methods.
+This includes fine-tuning PTQ (Post-Training Quantization) configurations, exporting models,
+and exploring advanced compression techniques. 
+These techniques are essential for further optimizing models and achieving superior performance in deployment scenarios.
+- [MCT Features notebooks](notebooks/mct_features_notebooks/README.md)
+
+## Task Notebooks
+This set of tutorials provide for various common deep learning applications(Object detection, Semantic Segmentation, etc).
+The notebooks in this section demonstrate how to use MCT for various tasks and models.
+- [Task notebooks](notebooks/task_notebooks/README.md)
+
+
+#### Python Version Downgrade for Google Colab (as of December 2025)
+
+The default Python version in Google Colab (3.12 or later) does not support TensorFlow 2.15 or earlier.
+If you want to run tutorials that use them, please downgrade to Python 3.11 by following these steps:
+
+1. In your Colab notebook, select **Runtime** → **Change runtime type** from the menu
+
+2. In the "Change runtime type" dialog, set **Runtime version** to `2025.07`
